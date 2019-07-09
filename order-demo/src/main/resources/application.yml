@@ -1,0 +1,17 @@
+###服务启动端口
+server:
+  port: 8811
+###服务名称（服务注册到eureka名称）
+spring:
+  application:
+    name: xyf-order
+###服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka
+
+#负载均衡的规则，表示加权规则，yml配置优先第一，java代码第二，默认最后
+xyf-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
